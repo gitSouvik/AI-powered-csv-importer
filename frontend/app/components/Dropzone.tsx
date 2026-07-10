@@ -45,34 +45,36 @@ export default function Dropzone({
       <div
         {...getRootProps()}
         className={`group relative flex cursor-pointer flex-col items-center justify-center gap-3 border border-dashed px-6 py-16 text-center transition-colors ${
-          isDragActive ? 'border-accent bg-accent-light' : 'border-line hover:border-accent'
+          isDragActive
+            ? 'border-accent bg-accent/5'
+            : 'border-zinc-800 hover:border-accent bg-zinc-900/30'
         }`}
       >
         <input {...getInputProps()} aria-label="Upload CSV file" />
         <UploadCloud
           size={32}
           strokeWidth={1.5}
-          className={isDragActive ? 'text-accent' : 'text-muted group-hover:text-accent'}
+          className={isDragActive ? 'text-accent' : 'text-zinc-600 group-hover:text-accent'}
         />
         <div>
-          <p className="text-base font-medium text-ink">
+          <p className="text-base font-medium text-zinc-200">
             Drop your CSV file here
           </p>
-          <p className="mt-1 text-sm text-muted">or click to browse files</p>
+          <p className="mt-1 text-sm text-zinc-500">or click to browse files</p>
         </div>
-        <span className="font-mono text-xs uppercase tracking-wide text-muted">
+        <span className="font-mono text-xs uppercase tracking-wide text-zinc-600">
           Supported file: .csv (max 5MB)
         </span>
       </div>
 
       {error && (
-        <div className="mt-3 flex items-center gap-2 border border-bad/30 bg-red-50 px-3 py-2 text-sm text-bad">
+        <div className="mt-3 flex items-center gap-2 border border-red-900/50 bg-red-950/30 px-3 py-2 text-sm text-bad">
           <FileWarning size={16} />
           <span>{error}</span>
         </div>
       )}
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-muted">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-zinc-600">
         <span>
           Required headers: created_at, name, email, country_code,
           mobile_without_country_code, company, city, state, country,
@@ -81,7 +83,7 @@ export default function Dropzone({
         </span>
         <a
           href={sampleCsvUrl()}
-          className="whitespace-nowrap border border-line px-2 py-1 text-ink hover:border-accent hover:text-accent"
+          className="whitespace-nowrap border border-zinc-700 px-2 py-1 text-zinc-400 hover:border-accent hover:text-accent"
           download
         >
           ↓ sample.csv

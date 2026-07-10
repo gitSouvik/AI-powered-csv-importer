@@ -8,28 +8,11 @@
 }
 
 * {
-  border-color: #e4e4e7;
-}
-
-body {
-  background-color: #ffffff;
-  color: #18181b;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-/* ── Dark mode ───────────────────────────────────────────────────────────── */
-.dark {
-  color-scheme: dark;
-  background-color: #0f0f11;
-  color: #f4f4f5;
-}
-
-.dark * {
   border-color: #27272a;
 }
 
-.dark body {
-  background-color: #0f0f11;
+html, body {
+  background-color: #0a0a0b;
   color: #f4f4f5;
 }
 
@@ -38,30 +21,19 @@ body {
   color: #ffffff;
 }
 
-/* thin scrollbars for the data tables */
+/* thin scrollbars */
 .thin-scroll::-webkit-scrollbar {
   height: 8px;
   width: 8px;
 }
 .thin-scroll::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #0a0a0b;
 }
 .thin-scroll::-webkit-scrollbar-thumb {
-  background-color: #e4e4e7;
-  border: 1px solid #ffffff;
+  background-color: #3f3f46;
+  border: 1px solid #0a0a0b;
 }
 .thin-scroll::-webkit-scrollbar-thumb:hover {
-  background-color: #f97316;
-}
-
-.dark .thin-scroll::-webkit-scrollbar-track {
-  background: #18181b;
-}
-.dark .thin-scroll::-webkit-scrollbar-thumb {
-  background-color: #3f3f46;
-  border: 1px solid #18181b;
-}
-.dark .thin-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #f97316;
 }
 
