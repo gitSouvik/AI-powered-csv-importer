@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  border-color: #e4e4e7;
+}
+
+body {
+  background-color: #ffffff;
+  color: #18181b;
+}
+
+::selection {
+  background-color: #f97316;
+  color: #ffffff;
+}
+
+/* thin scrollbars for the data tables - kept visible, never overlaying content */
+.thin-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: #e4e4e7;
+  border: 1px solid #ffffff;
+}
+.thin-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #f97316;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

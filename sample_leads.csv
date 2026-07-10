@@ -1,0 +1,7 @@
+First Name,Last Name,Email Address,Phone Number,Lead Source,Status,Date Added,Notes
+John,Doe,john.doe@example.com,555-0100,meridian_tower,GOOD_LEAD_FOLLOW_UP,2023-10-01,Wants a 2BHK
+Jane,Smith,"jane@smith.com, jane.work@example.com",+1-555-0199,facebook ads,BAD_LEAD,Oct 5th 2023,Budget too low
+Alice,Johnson,alice@example.com,,eden_park,SALE_DONE,10/12/2023,Paid full amount
+Bob,Brown,,555-0200,leads_on_demand,DID_NOT_CONNECT,yesterday,Call back next week
+Charlie,Davis,,,sarjapur_plots,,2023-10-15,Has no contact info so should be skipped
+David,Evans,david@evans.com,555-0300,google search,interested,10-20-2023,Need to map 'interested' status
