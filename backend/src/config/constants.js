@@ -54,5 +54,5 @@ module.exports = {
 
   MAX_UPLOAD_SIZE_BYTES: 5 * 1024 * 1024, // 5MB, matches frontend copy
 
-  GEMINI_MODEL: process.env.GEMINI_MODEL || 'gemini-1.5-flash',
+  GEMINI_MODEL: process.env.GEMINI_MODEL || 'gemini-flash-latest',
 };
