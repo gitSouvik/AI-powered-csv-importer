@@ -53,16 +53,16 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
   }
 
   return (
-    <div className="flex h-full flex-col border border-zinc-800 bg-zinc-900">
+    <div className="flex h-full flex-col border border-line dark:border-zinc-800 bg-[#FAFAFA] dark:bg-zinc-900">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-zinc-800 px-3 py-2">
-        <span className="font-mono text-[10px] uppercase tracking-wide text-zinc-500">
+      <div className="flex items-center justify-between border-b border-line dark:border-zinc-800 px-3 py-2">
+        <span className="font-mono text-[10px] uppercase tracking-wide text-muted dark:text-zinc-500">
           Output Fields
         </span>
         <button
           onClick={toggleAll}
           title={allSelected ? 'Deselect all' : 'Select all'}
-          className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wide text-zinc-500 transition hover:text-accent"
+          className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wide text-muted dark:text-zinc-500 transition hover:text-accent"
         >
           {allSelected ? <CheckSquare size={12} /> : <Square size={12} />}
           {allSelected ? 'All' : 'None'}
@@ -71,7 +71,7 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
 
       {/* CRM Fields checklist */}
       <div className="flex-1 overflow-y-auto p-2">
-        <p className="mb-1.5 px-1 font-mono text-[9px] uppercase tracking-wider text-zinc-700">
+        <p className="mb-1.5 px-1 font-mono text-[9px] uppercase tracking-wider text-line dark:text-zinc-700">
           CRM Fields
         </p>
         <div className="space-y-0.5">
@@ -82,7 +82,7 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
               className={`flex w-full items-center gap-2 rounded px-2 py-1.5 text-left transition-colors ${
                 selected.has(field)
                   ? 'bg-accent/10 text-accent'
-                  : 'text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200'
+                  : 'text-muted dark:text-zinc-500 hover:bg-white dark:hover:bg-zinc-800 hover:text-ink dark:hover:text-zinc-200'
               }`}
             >
               <span className="shrink-0">
@@ -100,7 +100,7 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
         {/* Custom fields chips */}
         {[...selected].filter((f) => !(CRM_FIELDS as readonly string[]).includes(f)).length > 0 && (
           <>
-            <p className="mb-1.5 mt-3 px-1 font-mono text-[9px] uppercase tracking-wider text-zinc-700">
+            <p className="mb-1.5 mt-3 px-1 font-mono text-[9px] uppercase tracking-wider text-line dark:text-zinc-700">
               Custom
             </p>
             <div className="flex flex-wrap gap-1 px-1">
@@ -126,7 +126,7 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
       </div>
 
       {/* Add custom field input */}
-      <div className="border-t border-zinc-800 p-2">
+      <div className="border-t border-line dark:border-zinc-800 p-2">
         <div className="flex gap-1">
           <input
             ref={inputRef}
@@ -134,7 +134,7 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={onKeyDown}
             placeholder="custom_field…"
-            className="min-w-0 flex-1 border border-zinc-700 bg-zinc-950 px-2 py-1.5 font-mono text-[10px] text-zinc-300 placeholder-zinc-700 outline-none focus:border-accent"
+            className="min-w-0 flex-1 border border-line dark:border-zinc-700 bg-white dark:bg-zinc-950 px-2 py-1.5 font-mono text-[10px] text-ink dark:text-zinc-300 placeholder-line dark:placeholder-zinc-700 outline-none focus:border-accent"
           />
           <button
             onClick={addCustom}
@@ -144,7 +144,7 @@ export default function HeaderSelector({ selected, onChange }: HeaderSelectorPro
             <Plus size={11} />
           </button>
         </div>
-        <p className="mt-1.5 font-mono text-[9px] text-zinc-700">
+        <p className="mt-1.5 font-mono text-[9px] text-line dark:text-zinc-700">
           {selected.size} field{selected.size !== 1 ? 's' : ''} selected
         </p>
       </div>

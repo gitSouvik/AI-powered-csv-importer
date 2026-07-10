@@ -78,16 +78,16 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 bg-[#0a0a0b]">
-      <header className="mb-10 flex items-start justify-between border-b border-zinc-800 pb-6">
+    <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 bg-white dark:bg-[#0a0a0b]">
+      <header className="mb-10 flex items-start justify-between border-b border-line dark:border-zinc-800 pb-6">
         <div>
           <span className="font-mono text-xs uppercase tracking-wide text-accent">
             GrowEasy · CRM Import
           </span>
-          <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-zinc-100">
+          <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink dark:text-zinc-100">
             CSV → CRM Importer
           </h1>
-          <p className="mt-2 max-w-xl text-sm text-zinc-500">
+          <p className="mt-2 max-w-xl text-sm text-muted dark:text-zinc-500">
             Upload a lead export from anywhere — Facebook, Google Ads, a
             spreadsheet, another CRM — and smart mapping converts it into GrowEasy&apos;s
             lead schema automatically.
@@ -100,7 +100,7 @@ export default function Home() {
       </header>
 
       {error && (
-        <div className="mb-6 flex items-start gap-2 border border-red-900/50 bg-red-950/30 px-4 py-3 text-sm text-bad">
+        <div className="mb-6 flex items-start gap-2 border border-bad/30 bg-red-50 dark:border-red-900/50 dark:bg-red-950/30 px-4 py-3 text-sm text-bad">
           <AlertTriangle size={16} className="mt-0.5 shrink-0" />
           <span>{error}</span>
         </div>
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="mt-4 flex items-center justify-between">
             <button
               onClick={reset}
-              className="flex items-center gap-1.5 border border-zinc-700 px-4 py-2 font-mono text-xs uppercase tracking-wide text-zinc-500 hover:border-zinc-400 hover:text-zinc-200"
+              className="flex items-center gap-1.5 border border-line px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted hover:border-ink hover:text-ink dark:border-zinc-700 dark:text-zinc-500 dark:hover:border-zinc-400 dark:hover:text-zinc-200"
             >
               <RotateCcw size={14} /> choose a different file
             </button>
@@ -150,7 +150,7 @@ export default function Home() {
           <div className="mt-6 flex items-center justify-between">
             <button
               onClick={reset}
-              className="flex items-center gap-1.5 border border-zinc-700 px-4 py-2 font-mono text-xs uppercase tracking-wide text-zinc-500 hover:border-zinc-400 hover:text-zinc-200"
+              className="flex items-center gap-1.5 border border-line px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted hover:border-ink hover:text-ink dark:border-zinc-700 dark:text-zinc-500 dark:hover:border-zinc-400 dark:hover:text-zinc-200"
             >
               <RotateCcw size={14} /> import another file
             </button>
