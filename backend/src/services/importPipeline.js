@@ -27,6 +27,7 @@ async function runImport(csvText, onProgress = () => {}) {
   const batches = chunkRows(rows, BATCH_SIZE);
   const imported = [];
   const skipped = [];
+  let globalBatchError = null;
 
   for (let i = 0; i < batches.length; i++) {
     const batch = batches[i];
@@ -56,10 +57,11 @@ async function runImport(csvText, onProgress = () => {}) {
       // don't fail the entire import, skip just this batch's rows so
       // the rest of the file still gets processed.
       console.error('[importPipeline] batch failed:', err.message);
+      globalBatchError = err.message;
       for (const { sourceIndex } of batch) {
         skipped.push({
           sourceIndex,
-          reason: `ai_batch_failed: ${err.message}`,
+          reason: '',
           fields: {},
         });
       }
@@ -83,6 +85,7 @@ async function runImport(csvText, onProgress = () => {}) {
     imported,
     skipped,
     parseErrors,
+    globalError: globalBatchError,
   };
 }
 

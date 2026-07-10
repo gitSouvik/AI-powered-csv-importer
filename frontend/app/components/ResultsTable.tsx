@@ -37,6 +37,19 @@ export default function ResultsTable({
         <StatCard label="Skipped" value={result.totalSkipped} tone="bad" />
       </div>
 
+      {result.globalError && (
+        <div className="mt-6 flex items-start gap-2 border border-bad/30 bg-red-50 px-4 py-3 text-sm text-bad">
+          <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          <div>
+            <strong>Mapping Engine Error:</strong> We could not process some batches due to an upstream service error (check your API quotas/keys).
+            <details className="mt-1 cursor-pointer text-xs opacity-80">
+              <summary>Technical Details</summary>
+              <div className="mt-2 whitespace-pre-wrap font-mono">{result.globalError}</div>
+            </details>
+          </div>
+        </div>
+      )}
+
       <div className="mt-6 flex border-b border-line font-mono text-xs uppercase tracking-wide">
         <button
           onClick={() => setTab('imported')}

@@ -38,6 +38,7 @@ export interface ImportResult {
   imported: ParsedRow[];
   skipped: SkippedRow[];
   parseErrors?: unknown[];
+  globalError?: string | null;
 }
 
 export interface ImportProgress {
