@@ -1,6 +1,9 @@
 import type { ImportProgress, ImportResult } from './types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 
+  (process.env.NODE_ENV === 'production' 
+    ? 'https://ai-powered-csv-importer-0glj.onrender.com' 
+    : 'http://localhost:4000');
 
 /**
  * Uploads the CSV file and consumes the backend's Server-Sent Events
