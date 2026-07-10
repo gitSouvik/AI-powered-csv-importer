@@ -11,6 +11,7 @@ import ResultsTable from './components/ResultsTable';
 import HeaderSelector from './components/HeaderSelector';
 import SpreadsheetExport from './components/SpreadsheetExport';
 import GridMotif from './components/GridMotif';
+import DarkModeToggle from './components/DarkModeToggle';
 import { importCsv } from '@/lib/api';
 import { CRM_FIELDS } from '@/lib/types';
 import type { AppStage, ImportProgress, ImportResult } from '@/lib/types';
@@ -77,22 +78,25 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mx-auto min-h-screen max-w-6xl px-6 py-12">
-      <header className="mb-10 flex items-start justify-between border-b border-line pb-6">
+    <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 dark:bg-[#0f0f11] dark:text-zinc-100">
+      <header className="mb-10 flex items-start justify-between border-b border-line pb-6 dark:border-zinc-800">
         <div>
           <span className="font-mono text-xs uppercase tracking-wide text-accent">
             GrowEasy · CRM Import
           </span>
-          <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink">
+          <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink dark:text-zinc-100">
             CSV → CRM Importer
           </h1>
-          <p className="mt-2 max-w-xl text-sm text-muted">
+          <p className="mt-2 max-w-xl text-sm text-muted dark:text-zinc-400">
             Upload a lead export from anywhere — Facebook, Google Ads, a
             spreadsheet, another CRM — and smart mapping converts it into GrowEasy&apos;s
             lead schema automatically.
           </p>
         </div>
-        <GridMotif className="mt-1 hidden h-16 w-16 shrink-0 sm:block" />
+        <div className="flex items-start gap-3">
+          <DarkModeToggle />
+          <GridMotif className="mt-1 hidden h-16 w-16 shrink-0 sm:block" />
+        </div>
       </header>
 
       {error && (
